@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>INDEX</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+header{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:20px;
+} 
+section{
+    width:350px;
+    float:left;
+    padding:10px;
+}
+
+/* Navbar below header */
+.w3-bar {
+    margin-top: 10px;
+}
+
+/* Center clock */
+#clock-container {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Footer like places page but keep black background & white text */
+footer {
+    margin-top: 40px;
+    padding: 15px;
+    text-align: center;
+    background-color: black; /* keep original black */
+    border-top: 2px solid #ddd;
+    font-size: 14px;
+    color: white; /* keep original white text */
+    font-family: courier;
+    clear: both;
+}
+</style>
+</head>
+
+<body onload="startTime()">
+
+<div id="clock-container">
+    <h2>Clock</h2>
+    <div id="txt"></div>
+</div>
+
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+</script>
+
+<header><h1>MY RESUME</h1></header>
+
+<!-- Navbar below header -->
+<div class="w3-bar w3-black w3-card">
+    <a href="home.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="family.html" class="w3-bar-item w3-button w3-padding-large">FAMILY</a>
+    <a href="education.html" class="w3-bar-item w3-button w3-padding-large">EDUCATION</a>
+    <a href="skills.html" class="w3-bar-item w3-button w3-padding-large">SKILLS</a>
+    
+    <!-- Dropdown -->
+    <div class="w3-dropdown-hover">
+        <button class="w3-button w3-padding-large">MORE<i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="socialmedia.html" class="w3-bar-item w3-button">SOCIAL MEDIA</a>
+            <a href="favourite.html" class="w3-bar-item w3-button">FAVOURITE</a>
+        </div>
+    </div>
+</div>
+
+<section style="text-align: left;">
+<h1>This is My Section</h1>
+<p>My Name is NUR ANIS AFINA BINTI AHMAD</p>
+</section>
+
+<footer>
+    Copyright &#128157; &copy; NUR ANIS AFINA AHMAD
+</footer>
+
+</body>
+</html>
+
+
+
+
